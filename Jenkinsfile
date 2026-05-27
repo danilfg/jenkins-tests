@@ -12,7 +12,7 @@ pipeline {
     }
 
     environment {
-        TEST_API_BASE_URL = 'http://127.0.0.1:8080'
+        TEST_API_BASE_URL = 'http://api-gateway:8080'
     }
 
     stages {
