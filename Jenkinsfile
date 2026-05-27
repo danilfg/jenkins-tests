@@ -30,7 +30,7 @@ pipeline {
     }
     post {
         always {
-            step([$class: 'AllureReportPublisher', commandline: 'allure-2.30.0'], includeProperties: false, jdk: '', results: [[path: 'allure-results']]])
+            step([$class: 'AllureReportPublisher', commandline: 'allure-2.30.0', includeProperties: false, jdk: '', results: [[path: 'allure-results']]])
             archiveArtifacts artifacts: 'allure-results/**', allowEmptyArchive:true
             script {
                 currentBuild.description = env.BUILD_URL ? "Allure report: ${env.BUILD_URL}" : "Allure report"
